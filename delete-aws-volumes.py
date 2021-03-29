@@ -34,7 +34,7 @@ def collect_disks():
             print("Sorry there are no unattached volumes currently.. exiting")
         else:
             pprint(volumes_to_delete)
-            reply = str(raw_input('Would you like to delete the volumes now (y/n): ')).lower().strip()
+            reply = str(input('Would you like to delete the volumes now (y/n): ')).lower().strip()
             if reply[0] == 'y':
                 print("You have chosen to proceed to delete")
                 for each_volume_id in volumes_to_delete:
