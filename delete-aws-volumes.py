@@ -63,8 +63,9 @@ def collect_disks():
                print("  Please select y/n")
 
 
-# Dunder init :)  Create boto3 client for ec2
-client = boto3.client('ec2', region_name=os.getenv('AWS_REGION'))
-# AWS auth provided by Federation login using aws-adfs login commandline tool
-#Call Collect Function to get disk listing
-collect_disks()
+if __name__ == '__main__':
+    # Dunder init :)  Create boto3 client for ec2
+    client = boto3.client('ec2', region_name=os.getenv('AWS_REGION'))
+    # AWS auth provided by Federation login using aws-adfs login commandline tool
+    #Call Collect Function to get disk listing
+    collect_disks()
